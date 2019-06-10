@@ -8,6 +8,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "babel-loader": "^8.0.5",
+    "favicons-webpack-plugin": "0.0.9",
     "html-webpack-plugin": "^3.2.0",
     "http_server": "^1.0.12",
     "webpack": "^4.33.0",
