@@ -7,6 +7,9 @@ const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 module.exports = {
     mode: 'development',
     entry: {
+        // Styles
+        styles: './src/assets/styles/sass/styles.css',
+        // Scripts
         app: './src/assets/js/app.js'
     },
     devtool: 'inline-source-map',
@@ -30,6 +33,14 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader"
+                ]
             }
         ]
     },
@@ -39,6 +50,9 @@ module.exports = {
         // Configuração de template para a página inicial ...
         new HtmlWebpackPlugin({
             template: 'src/index.html',
+            meta: {
+                // viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+            },
             hash: true
         }),
         // Configuração para geração de favicon ...
