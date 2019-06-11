@@ -2,4 +2,8 @@
 node_modules
 
 # WEBPACK BUILD
-dist 
+dist
+
+# EDITOR
+.vscode
+.idea

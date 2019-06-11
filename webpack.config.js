@@ -1,5 +1,5 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
@@ -8,7 +8,7 @@ module.exports = {
     mode: 'development',
     entry: {
         // Styles
-        styles: './src/assets/styles/sass/styles.css',
+        styles: './src/assets/styles/sass/styles.scss',
         // Scripts
         app: './src/assets/js/app.js'
     },
