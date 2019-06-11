@@ -1,12 +1,13 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconWebpackPlugin = require('favicons-webpack-plugin');
+const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 
 module.exports = {
     mode: 'development',
     entry: {
-        app: './src/index.js'
+        app: './src/assets/js/app.js'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -34,10 +35,11 @@ module.exports = {
     },
     plugins: [
         // Limpa o diretório de saída ...
-        // new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         // Configuração de template para a página inicial ...
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: 'src/index.html',
+            hash: true
         }),
         // Configuração para geração de favicon ...
         new FaviconWebpackPlugin({
@@ -55,6 +57,8 @@ module.exports = {
                 yandex: false,
                 windows: false
             }
-        })
+        }),
+        // Permite a inclusão de SVG inline por meio do arquivo
+        new HtmlWebpackInlineSVGPlugin()
     ]
 }
