@@ -1,9 +1,11 @@
 html,
 body {
   margin: 0;
+  height: 100%;
 }
 
 body {
-  background: #111111;
-  color: white;
+  background-image: radial-gradient(circle, #D7D7D7, #D7D7D7 1px, #FFF 1px, #FFF);
+  background-size: 28px 28px;
+  background-color: #111111;
 }
